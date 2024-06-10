@@ -3,5 +3,5 @@ import numpy as np
 
 
 
-def get_recomend() :
+def get_recomendation() :
     pass
