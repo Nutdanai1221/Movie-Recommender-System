@@ -14,3 +14,6 @@
 2024-06-10 15:57:40,023 INFO werkzeug Thread-4 : 172.22.0.1 - - [10/Jun/2024 15:57:40] "GET /recommendations?user_id=1 HTTP/1.1" 200 -
 2024-06-10 15:57:58,818 INFO werkzeug Thread-5 : 172.22.0.1 - - [10/Jun/2024 15:57:58] "GET /recommendations?user_id=1 HTTP/1.1" 200 -
 2024-06-10 15:58:46,412 INFO werkzeug Thread-6 : 172.22.0.1 - - [10/Jun/2024 15:58:46] "GET /recommendations?user_id=1&returnMetadata=true HTTP/1.1" 200 -
+2024-06-10 16:09:29,678 INFO werkzeug Thread-8 : 172.22.0.1 - - [10/Jun/2024 16:09:29] "GET /features?user_id=18 HTTP/1.1" 200 -
+2024-06-10 16:09:30,974 INFO werkzeug Thread-9 : 172.22.0.1 - - [10/Jun/2024 16:09:30] "GET /recommendations?user_id=18&returnMetadata=true HTTP/1.1" 200 -
+2024-06-10 16:09:31,594 INFO werkzeug Thread-10 : 172.22.0.1 - - [10/Jun/2024 16:09:31] "GET /recommendations?user_id=18 HTTP/1.1" 200 -
