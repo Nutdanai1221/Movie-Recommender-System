@@ -5,6 +5,7 @@ from recomender import recommend_movies
 import pandas as pd
 import os
 
+
 app = Flask(__name__)
 
 # Configure logging Refference from this : https://docs.python.org/3/howto/logging-cookbook.html
@@ -75,4 +76,4 @@ def get_features():
     return jsonify({'features': [{'histories': user_history}]})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000,debug=False)
