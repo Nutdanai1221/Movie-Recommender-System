@@ -1,22 +1,17 @@
-name: Integration Test
-
+name: Docker Integration Tests
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [ "**" ]
+
+  workflow_dispatch:
 
 jobs:
-  integration_test:
-    runs-on: ubuntu-latest
-    services:
-      docker:
-        image: docker:latest
-        options: --privileged
 
+  integration-tests:
+
+    runs-on: ubuntu-latest
     steps:
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -30,7 +25,7 @@ jobs:
         run: sleep 30s
 
       - name: Run integration test
-        run: docker-compose run web python tests/integration/test_api.py
+        run: docker-compose run recommendation-services python tests/integration/test_api.py
 
       - name: Stop containers
         run: docker-compose down
