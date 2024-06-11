@@ -1,8 +1,9 @@
-import logging
 from flask import Flask, request, jsonify
 from utils import get_user_history, process_data, get_recomendation
 from model import RecommenderNet
 import pandas as pd
+import logging
+import config
 import os
 
 
@@ -13,7 +14,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s',
     handlers=[
-        logging.FileHandler("app.log"),
+        logging.FileHandler(config.log_file),
         logging.StreamHandler()
     ]
 )
@@ -87,4 +88,4 @@ def get_features():
     return jsonify({'features': [{'histories': user_history}]})
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000,debug=False)
+    app.run(host=config.service_host, port=config.service_port,debug=False)

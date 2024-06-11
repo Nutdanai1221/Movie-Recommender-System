@@ -1,6 +1,6 @@
 import pandas as pd
-from model import RecommenderNet
 import numpy as np
+import config
 
 def process_data(data_path) :
     dataframe = pd.read_csv(data_path)
@@ -30,25 +30,17 @@ def get_recomendation(model, rating_df, movie_df, user_id, movie2movie_encoded, 
         ([[user_encoder]] * len(movies_not_watched), movies_not_watched)
     )
     ratings = model.predict(user_movie_array).flatten()
-    top_ratings_indices = ratings.argsort()[-10:][::-1]
+    top_ratings_indices = ratings.argsort()[-config.n_recommen:][::-1]
     recommended_movie_ids = [
         movie_encoded2movie.get(movies_not_watched[x][0]) for x in top_ratings_indices
     ]
 
     return recommended_movie_ids
 
-
 def get_user_history(user_id):
     ratings = pd.read_csv('data/process/cleaned_ratings.csv')
     user_ratings = ratings[ratings['userId'] == int(user_id)]
     user_history = user_ratings['movieId'].astype(str).tolist()
-    return user_history[:10]
+    return user_history[:config.n_history]
 
-if __name__ == "__main__" :
-    aa = pd.read_csv('data/movielens/movies.csv')
-    a,b,c,d,e,f = process_data('data/process/cleaned_ratings.csv')
-    recomendation_model = RecommenderNet(b, c, 50)
-    recomendation_model.load_weights('app_dev/recommender_weights.weights.h5')
-    print(get_recomendation(recomendation_model, 
-                            a,aa,599,d,e,f))
     

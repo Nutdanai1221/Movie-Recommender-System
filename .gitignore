@@ -1,1 +1,3 @@
 app_dev/
+app/__pycache__/
+app.log
