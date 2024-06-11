@@ -22,10 +22,10 @@ jobs:
         run: sleep 30s
 
       - name: Run unit tests in Docker container
-        run: docker exec movie_recommender python3 -m unittest discover -s /app/movie_recommender/app -p "testing.py"
+        run: docker exec movie-recommender-system_movie_recommender_1 python3 -m unittest discover -s movie_recommender/app -p "testing.py"
 
       - name: Run integration test
-        run: docker exec movie_recommender python3 /app/tests/integration/test_api.py
+        run: docker exec movie-recommender-system_movie_recommender_1 python3 movie_recommender/tests/integration/test_api.py
 
       - name: Stop containers
         run: docker-compose down
