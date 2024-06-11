@@ -1,17 +1,14 @@
-name: Docker Integration Tests
+name: Docker Integration and Unit Tests
+
 on:
   push:
     branches: [ "**" ]
-
   workflow_dispatch:
 
 jobs:
-
-  integration-tests:
-
+  tests:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -24,8 +21,11 @@ jobs:
       - name: Wait for services to start
         run: sleep 30s
 
+      - name: Run unit tests in Docker container
+        run: docker exec movie_recommender python3 -m unittest discover -s /app/movie_recommender/app -p "testing.py"
+
       - name: Run integration test
-        run: python tests/integration/test_api.py
+        run: docker exec movie_recommender python3 /app/tests/integration/test_api.py
 
       - name: Stop containers
         run: docker-compose down

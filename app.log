@@ -1,47 +1,35 @@
-2024-06-11 10:39:14,906 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2024-06-11 22:09:38,091 ERROR __main__ MainThread : Movies file not found: data/movielens/movies.csv
+2024-06-11 22:09:38,092 ERROR __main__ MainThread : Rating file not found: data/process/cleaned_ratings.csv
+2024-06-11 15:11:23,649 ERROR __main__ MainThread : Movies file not found: /movie_recommender/app/data/movielens/movies.csv
+2024-06-11 15:11:23,651 ERROR __main__ MainThread : Rating file not found: /movie_recommender/app/data/process/cleaned_ratings.csv
+2024-06-11 15:13:05,960 ERROR __main__ MainThread : Movies file not found: /app/data/movielens/movies.csv
+2024-06-11 15:13:05,962 ERROR __main__ MainThread : Rating file not found: /app/data/process/cleaned_ratings.csv
+2024-06-11 22:16:12,806 ERROR __main__ MainThread : Movies file not found: /app/movie_recommender/data/movielens/movies.csv
+2024-06-11 22:16:12,808 ERROR __main__ MainThread : Rating file not found: /app/movie_recommender/data/process/cleaned_ratings.csv
+2024-06-11 22:16:34,111 ERROR __main__ MainThread : Movies file not found: /app/movie_recommender/data/movielens/movies.csv
+2024-06-11 22:16:34,113 ERROR __main__ MainThread : Rating file not found: /app/movie_recommender/data/process/cleaned_ratings.csv
+2024-06-11 22:16:51,827 ERROR __main__ MainThread : Movies file not found: /app/movie_recommender/data/movielens/movies.csv
+2024-06-11 22:16:51,829 ERROR __main__ MainThread : Rating file not found: /app/movie_recommender/data/process/cleaned_ratings.csv
+2024-06-11 22:17:09,541 ERROR __main__ MainThread : Movies file not found: /app/movie_recommender/data/movielens/movies.csv
+2024-06-11 22:17:09,543 ERROR __main__ MainThread : Rating file not found: /app/movie_recommender/data/process/cleaned_ratings.csv
+2024-06-11 22:17:09,627 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.1.13:5000
-2024-06-11 10:39:14,906 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
-2024-06-11 10:39:32,305 ERROR __main__ Thread-1 (process_request_thread) : Error getting recommendations: Failed to convert a NumPy array to a Tensor (Unsupported object type NoneType).
-2024-06-11 10:39:32,307 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:39:32] "[35m[1mGET /recommendations?user_id=1&returnMetadata=true HTTP/1.1[0m" 500 -
-2024-06-11 10:39:32,346 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:39:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2024-06-11 10:40:05,790 ERROR __main__ Thread-3 (process_request_thread) : Error getting recommendations: Failed to convert a NumPy array to a Tensor (Unsupported object type NoneType).
-2024-06-11 10:40:05,791 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:40:05] "[35m[1mGET /recommendations?user_id=18 HTTP/1.1[0m" 500 -
-2024-06-11 10:41:27,667 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2024-06-11 22:17:09,627 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-06-11 15:17:48,530 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.13:5000
-2024-06-11 10:41:27,667 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
-2024-06-11 10:41:27,668 INFO werkzeug MainThread :  * Restarting with stat
-2024-06-11 10:41:30,217 WARNING werkzeug MainThread :  * Debugger is active!
-2024-06-11 10:41:30,218 INFO werkzeug MainThread :  * Debugger PIN: 183-538-851
-2024-06-11 10:41:37,897 ERROR __main__ Thread-2 (process_request_thread) : Error getting recommendations: Failed to convert a NumPy array to a Tensor (Unsupported object type NoneType).
-2024-06-11 10:41:37,898 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:41:37] "[35m[1mGET /recommendations?user_id=1&returnMetadata=true HTTP/1.1[0m" 500 -
-2024-06-11 10:41:56,159 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:41:56] "GET /features?user_id=18 HTTP/1.1" 200 -
-2024-06-11 10:42:06,471 INFO werkzeug MainThread :  * Detected change in '/home/earth/Desktop/True-digital/app_dev/utils.py', reloading
-2024-06-11 10:42:07,201 INFO werkzeug MainThread :  * Restarting with stat
-2024-06-11 10:42:09,883 WARNING werkzeug MainThread :  * Debugger is active!
-2024-06-11 10:42:09,884 INFO werkzeug MainThread :  * Debugger PIN: 183-538-851
-2024-06-11 10:42:38,077 INFO werkzeug MainThread :  * Detected change in '/home/earth/Desktop/True-digital/app_dev/main.py', reloading
-2024-06-11 10:42:38,814 INFO werkzeug MainThread :  * Restarting with stat
-2024-06-11 10:42:54,802 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.13:5000
-2024-06-11 10:42:54,802 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
-2024-06-11 10:42:54,803 INFO werkzeug MainThread :  * Restarting with stat
-2024-06-11 10:42:57,711 WARNING werkzeug MainThread :  * Debugger is active!
-2024-06-11 10:42:57,712 INFO werkzeug MainThread :  * Debugger PIN: 183-538-851
-2024-06-11 10:43:08,739 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:43:08] "GET /recommendations?user_id=1&returnMetadata=true HTTP/1.1" 200 -
-2024-06-11 10:44:00,058 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:44:00] "GET /recommendations?user_id=1 HTTP/1.1" 200 -
-2024-06-11 10:44:08,753 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:44:08] "GET /recommendations?user_id=1&returnMetadata=true HTTP/1.1" 200 -
-2024-06-11 10:44:15,508 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:44:15] "GET /recommendations?user_id=99&returnMetadata=true HTTP/1.1" 200 -
-2024-06-11 10:59:28,887 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.13:5000
-2024-06-11 10:59:28,888 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
-2024-06-11 10:59:36,017 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:59:36] "GET /recommendations?user_id=99&returnMetadata=true HTTP/1.1" 200 -
-2024-06-11 10:59:44,439 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:59:44] "GET /recommendations?user_id=555&returnMetadata=true HTTP/1.1" 200 -
-2024-06-11 11:00:04,082 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 11:00:04] "GET /recommendations?user_id=59&returnMetadata=true HTTP/1.1" 200 -
+ * Running on http://172.22.0.2:5000
+2024-06-11 15:17:48,530 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-06-11 15:18:03,748 INFO werkzeug Thread-1 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:18:03] "GET /recommendations?user_id=66&returnMetadata=true HTTP/1.1" 200 -
+2024-06-11 15:18:26,554 INFO werkzeug Thread-2 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:18:26] "GET /recommendations?user_id=66 HTTP/1.1" 200 -
+2024-06-11 15:18:53,633 INFO werkzeug Thread-3 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:18:53] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:18:55,359 INFO werkzeug Thread-4 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:18:55] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:30,600 INFO werkzeug Thread-5 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:30] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:31,642 INFO werkzeug Thread-6 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:31] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:32,599 INFO werkzeug Thread-7 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:32] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:33,497 INFO werkzeug Thread-8 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:33] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:34,328 INFO werkzeug Thread-9 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:34] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:35,179 INFO werkzeug Thread-10 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:35] "GET /recommendations?user_id=318 HTTP/1.1" 200 -
+2024-06-11 15:20:35,985 INFO werkzeug Thread-11 (process_request_thread) : 172.22.0.1 - - [11/Jun/2024 15:20:35] "GET /recommendations?user_id=318 HTTP/1.1" 200 -

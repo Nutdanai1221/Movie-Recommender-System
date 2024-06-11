@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "genres": [
+        "Action",
+        "Mystery",
+        "Thriller"
+      ],
+      "id": 109578,
+      "title": "Non-Stop (2014)"
+    },
+    {
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "id": 43921,
+      "title": "Running Scared (2006)"
+    },
+    {
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "id": 142372,
+      "title": "Our Brand Is Crisis (2015)"
+    },
+    {
+      "genres": [
+        "Action",
+        "Drama",
+        "War",
+        "IMAX"
+      ],
+      "id": 109673,
+      "title": "300: Rise of an Empire (2014)"
+    },
+    {
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "id": 142366,
+      "title": "Cigarette Burns (2005)"
+    },
+    {
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ],
+      "id": 130576,
+      "title": "Midnight Special (2015)"
+    },
+    {
+      "genres": [
+        "Drama"
+      ],
+      "id": 32058,
+      "title": "Class Action (1991)"
+    },
+    {
+      "genres": [
+        "Action",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "id": 142420,
+      "title": "High Rise (2015)"
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Documentary",
+        "Fantasy"
+      ],
+      "id": 97757,
+      "title": "'Hellboy': The Seeds of Creation (2004)"
+    },
+    {
+      "genres": [
+        "Comedy"
+      ],
+      "id": 6821,
+      "title": "More American Graffiti (1979)"
+    }
+  ]
+}
+

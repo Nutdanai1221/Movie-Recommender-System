@@ -1,16 +1,12 @@
-networks:
-  my-network:
-    driver: bridge
+version: '3'
 
 services:
-  recommendation-services:
+  movie_recommender:
     build: .
     ports:
       - "5000:5000"
     volumes:
       - .:/app
     environment:
-      MOVIES_FILE_PATH: "/app/data/movielens/movies.csv"
-      CLEANED_RATINGS_FILE_PATH: "/app/data/process/cleaned_ratings.csv"
-    networks:
-      - my-network
+      - MOVIES_FILE_PATH=/app/movie_recommender/data/movielens/movies.csv
+      - CLEANED_RATINGS_FILE_PATH=/app/movie_recommender/data/process/cleaned_ratings.csv
