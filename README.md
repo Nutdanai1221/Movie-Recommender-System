@@ -34,7 +34,7 @@ The dataset used is based on the MovieLens small datasets, available [here](http
 In this section, you'll discover the inner workings of Neural Collaborative Filtering (NCF), encompassing data preparation, model architecture, and the training process.
 
 ### Data Preparation
-For the full data preparation, see the notebook [here](https://github.com/Nutdanai1221/Movie-Recommender-System/blob/master/notebooks/movie-lens-recomendation.ipynb).
+For the full data preparation, see the notebook [here](https://github.com/Nutdanai1221/Movie-Recommender-System/blob/master/movie_recommender/notebooks/movie-lens-recomendation.ipynb).
 
 1. **Load Data**: The ratings data is loaded into a DataFrame.
     ```python
@@ -199,6 +199,7 @@ To run the project using Docker, follow these steps:
        ]
      }
      ```
+see the example JSON output file [here](https://github.com/Nutdanai1221/Movie-Recommender-System/blob/master/movie_recommender/data/output_json)
 ## How to Improve in the Future
 1. **Incorporate Additional User Features**: Enhance the recommender system by incorporating a wider range of user features such as user_id, sex, occupation, and age_group. By including these additional features, the system can provide more personalized recommendations tailored to individual user preferences and characteristics.
 
