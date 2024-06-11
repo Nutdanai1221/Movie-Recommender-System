@@ -1,0 +1,9 @@
+2024-06-11 00:19:54,608 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.2:5000
+2024-06-11 00:19:54,608 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-06-11 00:21:50,228 INFO werkzeug Thread-1 : 172.20.0.1 - - [11/Jun/2024 00:21:50] "GET /recommendations?user_id=18 HTTP/1.1" 200 -
+2024-06-11 00:23:05,309 INFO werkzeug Thread-2 : 172.20.0.1 - - [11/Jun/2024 00:23:05] "GET /features?user_id=18 HTTP/1.1" 200 -
+2024-06-11 00:23:06,496 INFO werkzeug Thread-3 : 172.20.0.1 - - [11/Jun/2024 00:23:06] "GET /recommendations?user_id=18&returnMetadata=true HTTP/1.1" 200 -
+2024-06-11 00:23:07,010 INFO werkzeug Thread-4 : 172.20.0.1 - - [11/Jun/2024 00:23:07] "GET /recommendations?user_id=18 HTTP/1.1" 200 -

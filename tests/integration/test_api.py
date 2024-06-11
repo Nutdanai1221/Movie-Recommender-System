@@ -5,7 +5,7 @@ class TestRecommendationsEndpoint(unittest.TestCase):
 
     def test_recommendations_endpoint_without_metadata(self):
         # Send a GET request to the recommendations endpoint without metadata
-        response = requests.get('http://recommendation-service:5000/recommendations?user_id=18')
+        response = requests.get('http://localhost:5000/recommendations?user_id=18')
 
         # Check if the response status code is 200 (OK)
         self.assertEqual(response.status_code, 200)
@@ -20,7 +20,7 @@ class TestRecommendationsEndpoint(unittest.TestCase):
 
     def test_recommendations_endpoint_with_metadata(self):
         # Send a GET request to the recommendations endpoint with metadata
-        response = requests.get('http://recommendation-service:5000/recommendations?user_id=18&returnMetadata=true')
+        response = requests.get('http://localhost:5000/recommendations?user_id=18&returnMetadata=true')
 
         # Check if the response status code is 200 (OK)
         self.assertEqual(response.status_code, 200)
@@ -37,7 +37,7 @@ class TestRecommendationsEndpoint(unittest.TestCase):
 
     def test_features_endpoint(self):
         # Send a GET request to the features endpoint
-        response = requests.get('http://recommendation-service:5000/features?user_id=18')
+        response = requests.get('http://localhost:5000/features?user_id=18')
 
         # Check if the response status code is 200 (OK)
         self.assertEqual(response.status_code, 200)
