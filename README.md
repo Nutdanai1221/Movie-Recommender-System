@@ -143,12 +143,12 @@ To run the project using Docker, follow these steps:
    - After Docker Compose has started the containers, open a new terminal window.
    - Use the following cURL command to request recommendations for a specific user:
      ```
-     curl -X GET http://localhost:5000/recommendations?user_id=<USER_ID>
+     curl -X GET "http://localhost:5000/recommendations?user_id=<USER_ID>"
      ```
    - Replace `<USER_ID>` with the ID of the user for whom you want recommendations.
    - Example Request:
      ```
-     curl -X GET http://localhost:5000/recommendations?user_id=18
+     curl -X GET "http://localhost:5000/recommendations?user_id=18"
      ```
     - **Example Response**:
      ```json
@@ -163,7 +163,7 @@ To run the project using Docker, follow these steps:
    - To include additional metadata about the recommended movies, add the `returnMetadata=true` parameter to the request.
    - Example Request:
      ```
-     curl -X GET http://localhost:5000/recommendations?user_id=18&returnMetadata=true
+     curl -X GET "http://localhost:5000/recommendations?user_id=18&returnMetadata=true"
      ```
    - **Example Response**:
      ```json
@@ -185,11 +185,11 @@ To run the project using Docker, follow these steps:
 5. **Fetching User Features**:
    - Use the following `curl` command to retrieve the movie IDs that a specific user has already seen:
      ```
-     curl -X GET http://localhost:5000/features?user_id=<USER_ID>
+     curl -X GET "http://localhost:5000/features?user_id=<USER_ID>"
      ```
    - **Example Request**:
      ```
-     curl -X GET http://localhost:5000/features?user_id=18
+     curl -X GET "http://localhost:5000/features?user_id=18"
      ```
    - **Example Response**:
      ```json
