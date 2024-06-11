@@ -25,7 +25,7 @@ jobs:
         run: sleep 30s
 
       - name: Run integration test
-        run: docker-compose run recommendation-services python tests/integration/test_api.py
+        run: python tests/integration/test_api.py
 
       - name: Stop containers
         run: docker-compose down
