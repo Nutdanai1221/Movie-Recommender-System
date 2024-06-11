@@ -1,7 +1,7 @@
 import logging
 from flask import Flask, request, jsonify
-from utils import get_user_history
-from recomender import recommend_movies
+from utils import get_user_history, process_data, get_recomendation
+from model import RecommenderNet
 import pandas as pd
 import os
 
@@ -30,6 +30,10 @@ except FileNotFoundError:
     logger.error(f'Movies file not found: {MOVIES_FILE_PATH}')
     movies = pd.DataFrame(columns=['movieId', 'title', 'genres'])
 
+data_f,n_user,n_movie, movie2movie_encoded, user2user_encoded, movie_encoded2movie = process_data(CLEANED_RATINGS_FILE_PATH)
+recomendation_model = RecommenderNet(n_user, n_movie, 50)
+recomendation_model.load_weights('app_dev/recommender_weights.weights.h5')
+
 @app.route('/recommendations', methods=['GET'])
 def get_recommendations():
     user_id = request.args.get('user_id')
@@ -39,7 +43,14 @@ def get_recommendations():
         return jsonify({'error': 'Valid user_id is required'}), 400
 
     try:
-        recommended_movie_ids = recommend_movies(user_id, CLEANED_RATINGS_FILE_PATH)
+        recommended_movie_ids = get_recomendation(recomendation_model,
+                                                  data_f,
+                                                  movies,
+                                                  int(user_id),
+                                                  movie2movie_encoded, 
+                                                  user2user_encoded, 
+                                                  movie_encoded2movie)
+        print(recommended_movie_ids)
     except Exception as e:
         logger.error(f'Error getting recommendations: {e}')
         return jsonify({'error': 'Error getting recommendations'}), 500
@@ -76,4 +87,4 @@ def get_features():
     return jsonify({'features': [{'histories': user_history}]})
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000,debug=False)
+    app.run(host="0.0.0.0", port=5000,debug=True)

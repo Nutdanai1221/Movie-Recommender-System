@@ -1,5 +1,42 @@
 import pandas as pd
-from recomender import recommend_movies
+from model import RecommenderNet
+import numpy as np
+
+def process_data(data_path) :
+    dataframe = pd.read_csv(data_path)
+    user_ids = dataframe["userId"].unique().tolist()
+    user2user_encoded = {x: i for i, x in enumerate(user_ids)}
+    movie_ids = dataframe["movieId"].unique().tolist()
+    movie2movie_encoded = {x: i for i, x in enumerate(movie_ids)}
+    movie_encoded2movie = {i: x for i, x in enumerate(movie_ids)}
+    dataframe["user"] = dataframe["userId"].map(user2user_encoded)
+    dataframe["movie"] = dataframe["movieId"].map(movie2movie_encoded)
+    dataframe["rating"] = dataframe["rating"].values.astype(np.float32)
+    num_users = len(user2user_encoded)
+    num_movies = len(movie_encoded2movie)
+    return dataframe, num_users, num_movies, movie2movie_encoded, user2user_encoded, movie_encoded2movie
+
+def get_recomendation(model, rating_df, movie_df, user_id, movie2movie_encoded, user2user_encoded, movie_encoded2movie) : 
+    movies_watched_by_user = rating_df[rating_df.userId == user_id]
+    movies_not_watched = movie_df[
+        ~movie_df["movieId"].isin(movies_watched_by_user.movieId.values)
+    ]["movieId"]
+    movies_not_watched = list(
+        set(movies_not_watched).intersection(set(movie2movie_encoded.keys()))
+    )
+    movies_not_watched = [[movie2movie_encoded.get(x)] for x in movies_not_watched]
+    user_encoder = user2user_encoded.get(user_id)
+    user_movie_array = np.hstack(
+        ([[user_encoder]] * len(movies_not_watched), movies_not_watched)
+    )
+    ratings = model.predict(user_movie_array).flatten()
+    top_ratings_indices = ratings.argsort()[-10:][::-1]
+    recommended_movie_ids = [
+        movie_encoded2movie.get(movies_not_watched[x][0]) for x in top_ratings_indices
+    ]
+
+    return recommended_movie_ids
+
 
 def get_user_history(user_id):
     ratings = pd.read_csv('data/process/cleaned_ratings.csv')
@@ -7,22 +44,11 @@ def get_user_history(user_id):
     user_history = user_ratings['movieId'].astype(str).tolist()
     return user_history[:10]
 
-def get_recommendations(user_id, return_metadata):
-    movies = pd.read_csv('data/movielens/movies.csv')
-    recommended_movie_ids = recommend_movies(user_id)
-
-    if return_metadata:
-        recommendations = movies[movies['movieId'].isin(recommended_movie_ids)]
-        recommendations = recommendations[['movieId', 'title', 'genres']]
-        recommendations.columns = ['id', 'title', 'genres']
-        recommendations['genres'] = recommendations['genres'].apply(lambda x: x.split('|'))
-        return {'items': recommendations.to_dict('records')}
-    else:
-        return {'items': [{'id': str(movie_id)} for movie_id in recommended_movie_ids]}
-
-def get_features(user_id):
-    user_history = get_user_history(user_id)
-    return {'features': [{'histories': user_history}]}
-
 if __name__ == "__main__" :
-    print(get_features(18))
+    aa = pd.read_csv('data/movielens/movies.csv')
+    a,b,c,d,e,f = process_data('data/process/cleaned_ratings.csv')
+    recomendation_model = RecommenderNet(b, c, 50)
+    recomendation_model.load_weights('app_dev/recommender_weights.weights.h5')
+    print(get_recomendation(recomendation_model, 
+                            a,aa,599,d,e,f))
+    

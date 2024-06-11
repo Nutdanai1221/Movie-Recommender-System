@@ -2,3 +2,6 @@ flask
 pandas
 scikit-learn
 requests
+tensorflow
+seaborn
+matplotlib
