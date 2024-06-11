@@ -1,4 +1,6 @@
-version: '3'
+networks:
+  my-network:
+    driver: bridge
 
 services:
   recommendation-services:
@@ -10,3 +12,5 @@ services:
     environment:
       MOVIES_FILE_PATH: "/app/data/movielens/movies.csv"
       CLEANED_RATINGS_FILE_PATH: "/app/data/process/cleaned_ratings.csv"
+    networks:
+      - my-network
