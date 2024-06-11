@@ -37,3 +37,11 @@
 2024-06-11 10:44:00,058 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:44:00] "GET /recommendations?user_id=1 HTTP/1.1" 200 -
 2024-06-11 10:44:08,753 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:44:08] "GET /recommendations?user_id=1&returnMetadata=true HTTP/1.1" 200 -
 2024-06-11 10:44:15,508 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:44:15] "GET /recommendations?user_id=99&returnMetadata=true HTTP/1.1" 200 -
+2024-06-11 10:59:28,887 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.13:5000
+2024-06-11 10:59:28,888 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-06-11 10:59:36,017 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:59:36] "GET /recommendations?user_id=99&returnMetadata=true HTTP/1.1" 200 -
+2024-06-11 10:59:44,439 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 10:59:44] "GET /recommendations?user_id=555&returnMetadata=true HTTP/1.1" 200 -
+2024-06-11 11:00:04,082 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jun/2024 11:00:04] "GET /recommendations?user_id=59&returnMetadata=true HTTP/1.1" 200 -

@@ -32,7 +32,7 @@ except FileNotFoundError:
 
 data_f,n_user,n_movie, movie2movie_encoded, user2user_encoded, movie_encoded2movie = process_data(CLEANED_RATINGS_FILE_PATH)
 recomendation_model = RecommenderNet(n_user, n_movie, 50)
-recomendation_model.load_weights('app_dev/recommender_weights.weights.h5')
+recomendation_model.load_weights('data/models/recommender_weights.weights.h5')
 
 @app.route('/recommendations', methods=['GET'])
 def get_recommendations():
